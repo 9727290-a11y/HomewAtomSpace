@@ -1,18 +1,21 @@
 #task1
-user_name_and_surname = input("Please, enter your name and surname: ")
+full_name = input("Please, enter your name and surname: ")
+initial_name = " ".join([initials[0] for initials in full_name.split()])
 
-while len(user_name_and_surname) == 0 or user_name_and_surname == " ":
-    user_name_and_surname = input("Please, enter your correct name and surname: ")
+while not full_name.strip():
+    full_name = input("Please, enter your correct name and surname: ")
+    initial_name = " ".join([initials[0] for initials in full_name.split()])
 else:
-        print("Your name and surname: " + user_name_and_surname)
+        print(f'Your name and surname initials: {initial_name}')
 
 #tsk2
 user_email = input("Please, enter your email: ")
-if user_email == " " or len(user_email) == 0 or (".com" not in user_email and ".org" not in  user_email):
-    user_email=input("Please, enter your correct email: ")
+if not user_email.strip() or not user_email.endwith((".com", ".org")):
+    user_email = input("Please, enter your correct email: ")
 else:
-    count_of_user_email = len(user_email)
-    print("Your email: " + user_email.replace(user_email[1:-11], count_of_user_email * "*"))
+    username, domain = user_email.split("@")
+    masked_middle = '*' * (len(username) - 2)
+    print(f'{username[0]}{masked_middle}{username[-1]@{domain}}')
 
 #tsk3
 user_add_num = int(input("What num would you like to add? "))
@@ -23,36 +26,32 @@ else:
     print(list_of_num + [user_add_num])
 
 #tsk4
-empty_set_user1 = set()
-empty_set_user2 = set()
-# сет() - створює список
+first_user_tags = set()
+second_user_tags = set()
+#set() - створює список
 
-user1_intrested_in = input("User1: Enter what you are interested in: ").strip().split(",")
-user2_intrested_in = input("User2: Enter what you are interested in: ").strip().split(",")
-empty_set_user1.update(user1_intrested_in)
-empty_set_user2.update(user2_intrested_in)
-users_intersection = empty_set_user1.intersection(empty_set_user2) 
-users_union = empty_set_user1.union(empty_set_user2)
+first_user_input_tags = input("User1: Enter what you are interested in: ").strip().split(",")
+second_user_input_tags = input("User2: Enter what you are interested in: ").strip().split(",")
+first_user_tags.update(first_user_input_tags)
+second_user_tags.update(second_user_input_tags)
+common_tags = first_user_tags.intersection(second_user_tags) 
+all_unique_tags = first_user_tags.union(second_user_tags)
 
-if len(user1_intrested_in) == 3 and len(user2_intrested_in) == 3:
-    print("Intersection of two users: " + ", ".join(users_intersection))
-    print("Union: " + ", ".join(users_union))
-elif len(user1_intrested_in) != 3 or len(user2_intrested_in) != 3:
+if len(first_user_input_tags) == 3 and len(second_user_input_tags) == 3:
+    print("Intersection of two users: " + ", ".join(common_tags))
+    print("Union: " + ", ".join(all_unique_tags))
+elif len(first_user_input_tags) != 3 or len(second_user_input_tags) != 3:
     print("Error. Write tags")
-    user1_intrested_in = input("User1: Enter what you are interested in: ").strip().split(",")
-    user2_intrested_in = input("User2: Enter what you are interested in: ").strip().split(",")
+    first_user_input_tags = input("User1: Enter what you are interested in: ").strip().split(",")
+    second_user_input_tags = input("User2: Enter what you are interested in: ").strip().split(",")
     
 #.intersection() - метод, який шукає спільне з двох списків
 #.union() - метод, який шукає що не повторювалось з двох списків
 #.join() - поєднує список слів в один або розділяє, можна додати сепаратор
-
-
 #tsk5
 
 while True:
-
     user_num_input = input("Enter a three num with backspaces: ").split()
-
     try:
         if len(user_num_input) != 3:
             raise ValueError("You wrote more or less than three num")
@@ -68,9 +67,8 @@ while True:
         break
 
     except ValueError:
-        print("Error")
+        print("Error adding numbers: You must enter three numbers, and they must be valid")
 
-    
 #sum() - рахує суму введених чисел, які були записані у список
 '''
   try: перевірка якщо користувач ввів все правильно, якщо ні перекине в except
