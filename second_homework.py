@@ -48,10 +48,14 @@ elif len(first_user_input_tags) != 3 or len(second_user_input_tags) != 3:
 #.intersection() - метод, який шукає спільне з двох списків
 #.union() - метод, який шукає що не повторювалось з двох списків
 #.join() - поєднує список слів в один або розділяє, можна додати сепаратор
+
+
 #tsk5
 
 while True:
+
     user_num_input = input("Enter a three num with backspaces: ").split()
+
     try:
         if len(user_num_input) != 3:
             raise ValueError("You wrote more or less than three num")
