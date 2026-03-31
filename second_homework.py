@@ -4,7 +4,7 @@ initial_name = " ".join([initials[0] for initials in full_name.split()])
 
 while not full_name.strip():
     full_name = input("Please, enter your correct name and surname: ")
-    initial_name = " ".join([initials[0] for initials in full_name.s[lit()]])
+    initial_name = " ".join([initials[0] for initials in full_name.split()])
 else:
         print(f'Your name and surname initials: {initial_name}')
 
