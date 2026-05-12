@@ -52,7 +52,7 @@ def validate_password(password: str, encrypt_paassword: bool) -> str:
 
 
 def validate_name(full_name: str, show_only_initials: bool) -> str:
-    words_in_full_name = full_name.strip().split() 
+    parts = full_name.strip().split() 
     try:
         if len(words_in_full_name) >= 2 and len(words_in_full_name[0]) >= 2 and len(words_in_full_name[1]) >= 2:
             name_initials = " ".join([initials[0] for initials in words_in_full_name])
