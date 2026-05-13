@@ -36,7 +36,7 @@ def validate_email(email: str, mask_email: bool) -> str:
         except ValueError:
             print("incorected data... ")           
 
-def validate_password(password: str, encrypt_paassword: bool) -> str:
+def validate_password(password: str, encrypt_password: bool) -> str:
         try:
             if len(password) > 8:
                 if encrypt_paassword:
