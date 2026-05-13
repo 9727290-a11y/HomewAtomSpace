@@ -65,7 +65,7 @@ def main() -> None:
     exit_choice = input("Welcome to progran!\n Would you want to start? (y/n)").lower() == 'y'
     if exit_choice:
         user = get_user_info()
-        print(f'{user["name"]}, \n{user["email"]}, \n{user["password"]}')
+        print(f'Your name: {user["name"]}, \nEmail:{user["email"]}, \n{user["password"]}')
     else:
         print("Ok, bye! ")
 
