@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .vscode/
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -182,6 +183,8 @@ cython_debug/
 # Learn more at https://abstra.io/docs
 .abstra/
 
+=======
+>>>>>>> 7eb1ef8d1be9b82769648bb74329c7d80595fdc8
 # Visual Studio Code
 #  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
 #  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
@@ -196,7 +199,11 @@ cython_debug/
 .pypirc
 
 # Cursor
+<<<<<<< HEAD
 #  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
+=======
+#  Cursor is an AI-powered code editor. .cursorignore specifies files/directories to
+>>>>>>> 7eb1ef8d1be9b82769648bb74329c7d80595fdc8
 #  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
@@ -205,4 +212,11 @@ cython_debug/
 # Marimo
 marimo/_static/
 marimo/_lsp/
+<<<<<<< HEAD
 __marimo__/
+=======
+marimo/
+
+__pycache__/
+*.pyc
+>>>>>>> 7eb1ef8d1be9b82769648bb74329c7d80595fdc8
