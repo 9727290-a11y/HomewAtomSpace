@@ -72,6 +72,7 @@ def main() -> None:
             if followers_or_following == '2':
                 user_following(current_user)
         elif choice in ('9', 'exit'):
+            print("bye")
             break
 
 main()
