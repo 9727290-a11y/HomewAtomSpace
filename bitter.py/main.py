@@ -5,9 +5,9 @@ from services.post import find_post_by_author, delete_post, edit_post
 from services.user import follow_user, unfollow_user, user_following, user_followers
 
 def show_menu(current_user: str) -> None:
-    '''
+    """
     This main function show menu to user
-    '''
+    """
     print("\nWelcome to the bitter, where you can write posts!")
     print(f'You are signed as: {current_user}')
     print("1. Create post")
@@ -45,19 +45,25 @@ def main() -> None:
                 print(f"--------{post['author']}--------")
                 print(f"{formated_content} \nviews: {post['views']}")
         elif choice in ('3', "find user's posts"):
-            find_post_by_author(current_user)
-            if post["author"] != current_user:
-                post["views"]+=1
-            else: print("there is no such user yet")
+            target_user = input("From which user you want to find posts? ")
+            find_post_by_author(current_user, target_user)
+            if post['author'] != current_user:
+                post['views']+=1
+            else: 
+                print("there is no such user yet")
             print(f"views:{post['views']}")
         elif choice in ('4', "delete post with ID"):
-            if delete_post(current_user):
+            target_id = int(input("enter id for post deleting: "))
+            if delete_post(current_user, target_id):
                 print("Your post was delated")
-            else: print("you don't have access to this")
+            else: 
+                print("you don't have access to this")
         elif choice in ('5', "edit post"):
-            if edit_post(current_user):
+            target_id = int(input("enter id for post editing: "))
+            if edit_post(current_user, target_id):
                 print("Your post editing successfull")
-            else: print("you dont have access to this")
+            else:
+                print("you dont have access to this")
         elif choice in ('6', "follow user"):
             if follow_user(current_user):
                 print("Follow successfull")
