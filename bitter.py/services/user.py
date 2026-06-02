@@ -71,7 +71,8 @@ def user_followers(current_user):
     """
     if not users[current_user]['followers']:
         print("You don't have followers yet")
-    else: print(f"Your followers: {users[current_user]['followers']}")
+    else: 
+        print(f"Your followers: {users[current_user]['followers']}")
 
 
 def user_following(current_user):
@@ -80,6 +81,7 @@ def user_following(current_user):
     """
     if not users[current_user]['following']:
         print("You don't have following yet")
-    else: print(f"You following: {users[current_user]['following']}")
+    else: 
+        print(f"You following: {users[current_user]['following']}")
     
 _SPECIAL_CHARACTERS = "!@#$%^&*()_+-=[]{}|;:,.<>?/"

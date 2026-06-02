@@ -60,7 +60,8 @@ def main() -> None:
                 print("you don't have access to this")
         elif choice in ('5', "edit post"):
             target_id = int(input("enter id for post editing: "))
-            if edit_post(current_user, target_id):
+            edited_content = input("enter new content for your post: ")
+            if edit_post(current_user, target_id, edited_content):
                 print("Your post editing successfull")
             else:
                 print("you dont have access to this")

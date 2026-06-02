@@ -56,7 +56,8 @@ def delete_post(current_user,target_id) -> bool:
                 posts.remove(post)
                 users[current_user]['posts'].remove(target_id)
                 return True
-            else: return False
+            else: 
+                return False
     return False
 
 def find_post_by_author(current_user, target_user) -> bool:
@@ -73,7 +74,7 @@ def find_post_by_author(current_user, target_user) -> bool:
                 return True
     return False
 
-def edit_post(current_user, target_id) -> bool:
+def edit_post(current_user, target_id, edited_content) -> bool:
     """
     This function for editing user's post
 
@@ -84,10 +85,10 @@ def edit_post(current_user, target_id) -> bool:
     for post in posts:
         if post['id'] == target_id:
             if post['author'] == current_user:
-                edit_post = input('enter new text for your post: ')
-                post['content'] = edit_post
+                post['content'] = edited_content
                 return True
-            else: return False
+            else: 
+                return False
         return False
     
 _FORBIDDEN_WORDS = ["pytin", "apple", "banana"]
