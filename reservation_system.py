@@ -54,8 +54,7 @@ class VIPCinemaHall(CinemaHall):
         return len(self.booked_seats) * (self.ticket_price + self.service_fee)
         
 def main() -> None:
-    my_hall = CinemaHall("booBoooooooo", 50, 200)
-    # print(f"CinemaHall: LALALA\n")
+    my_hall = CinemaHall("LALALA", 50, 200)
     print(f"CinemaHall: {my_hall.movie_title}\n")
     print(f"Initial available seats: {my_hall.available_seats}")
     print(f"Initial income: ${my_hall.income}\n")
