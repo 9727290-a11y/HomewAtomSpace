@@ -5,6 +5,18 @@ class CinemaHall:
         self.ticket_price = ticket_price
         self.__booked_seats = []
     
+    @property
+    def booked_seats(self) -> list[int]:
+        return self.__booked_seats.copy()
+    
+    @property
+    def available_seats(self) -> int:
+        return self.total_seats - len(self.__booked_seats)
+    
+    @property
+    def income(self) -> float:
+        return len(self.__booked_seats) * self.ticket_price
+
     def book_seat(self, seat_number: int) -> None:
         """Books a seat if it is valid and not already reserved"""
         
@@ -31,30 +43,20 @@ class CinemaHall:
         print(f"Booked seats: {len(self.__booked_seats)}")
         print(f"available seats: {self.available_seats}")
         print(f"Income: {self.income} грн\n")
-            
-    @property   
-    def booked_seats(self) -> list[int]:
-        return self.__booked_seats.copy()
-    
-    @property
-    def available_seats(self) -> int:
-        return self.total_seats - len(self.__booked_seats)
-    
-    @property
-    def income(self) -> float:
-        return len(self.__booked_seats) * self.ticket_price
 
 class VIPCinemaHall(CinemaHall):
     def __init__(self, movie_title: str, total_seats: int, ticket_price: float, service_fee: float) -> None:
         super().__init__(movie_title, total_seats, ticket_price)
         self.service_fee = service_fee
         
-    def get_income(self) -> float:
+    @property
+    def income(self) -> float:
         return len(self.booked_seats) * (self.ticket_price + self.service_fee)
         
 def main() -> None:
-    my_hall = CinemaHall("LALALA", 50, 200)
-    print(f"CinemaHall: LALALA\n")
+    my_hall = CinemaHall("booBoooooooo", 50, 200)
+    # print(f"CinemaHall: LALALA\n")
+    print(f"CinemaHall: {my_hall.movie_title}\n")
     print(f"Initial available seats: {my_hall.available_seats}")
     print(f"Initial income: ${my_hall.income}\n")
     print("Booking seats 10, 55, and -5")
@@ -69,4 +71,5 @@ def main() -> None:
     print(f"Final income: ${my_hall.income}")
     my_hall.cancel_booking(15)
     my_hall.show_hall_info()
+    
 main()
