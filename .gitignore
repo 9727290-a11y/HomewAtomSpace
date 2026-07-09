@@ -212,3 +212,4 @@ marimo/
 
 __pycache__/
 *.pyc
+.vscode
