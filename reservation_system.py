@@ -19,7 +19,6 @@ class CinemaHall:
 
     def book_seat(self, seat_number: int) -> None:
         """Books a seat if it is valid and not already reserved"""
-        
         if seat_number >= 1 and seat_number <= self.total_seats and seat_number not in self.__booked_seats:
             self.__booked_seats.append(seat_number)
             print(f"Successfull reserved {seat_number} seat")
@@ -28,7 +27,6 @@ class CinemaHall:
             
     def cancel_booking(self, seat_number: int) -> None:
         """Cancels the reservation for a specific seat"""
-        
         if seat_number in self.__booked_seats:
             self.__booked_seats.remove(seat_number)
             print("Your reserved seat successfully canceled!")
@@ -37,7 +35,6 @@ class CinemaHall:
             
     def show_hall_info(self) -> None:
         """Displays general information about the cinema hall and seat statistics"""
-        
         print(f"Film: {self.movie_title}")
         print(f"Total seats: {self.total_seats}")
         print(f"Booked seats: {len(self.__booked_seats)}")
