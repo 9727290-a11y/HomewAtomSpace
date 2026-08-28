@@ -30,6 +30,7 @@ source .venv/bin/activate
     Environment: Virtual environment (.venv)
 
 # About branches
+
 1.Second_homework.py focuses on processing user input, manipulating strings, utilizing different data structures (Lists and Sets), and building robust programs with error handling.
 
 2.task_third_homework.py - a basic console calculator that allows users to perform basic arithmetic operations.
