@@ -31,11 +31,11 @@ source .venv/bin/activate
 
 # About branches
 
-1.Second_homework.py focuses on processing user input, manipulating strings, utilizing different data structures (Lists and Sets), and building robust programs with error handling.
+1. Second_homework.py focuses on processing user input, manipulating strings, utilizing different data structures (Lists and Sets), and building robust programs with error handling.
 
-2.task_third_homework.py - a basic console calculator that allows users to perform basic arithmetic operations.
+2. task_third_homework.py - a basic console calculator that allows users to perform basic arithmetic operations.
 
-3.Fourth_homework.py - transitions from flat scripts to a modular programming approach. It features a complete user registration flow that validates, processes, and securely obfuscates user input using dedicated Python functions.
+3. Fourth_homework.py - transitions from flat scripts to a modular programming approach. It features a complete user registration flow that validates, processes, and securely obfuscates user input using dedicated Python functions.
 
 4. reservation_system.py - introduces Object-Oriented Programming concepts by modeling a cinema ticket booking system. It demonstrates how to structure code using classes, manage internal state, and apply inheritance.
 
