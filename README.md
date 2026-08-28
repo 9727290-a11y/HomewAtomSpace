@@ -40,3 +40,5 @@ source .venv/bin/activate
 4. reservation_system.py - introduces Object-Oriented Programming concepts by modeling a cinema ticket booking system. It demonstrates how to structure code using classes, manage internal state, and apply inheritance.
 
 5. bitter - terminal-based Social Network. This project is a multi-module console application that simulates a mini social network called "Bitter" (a conceptual clone of Twitter). It transitions from single-file scripts to a structured, modular architecture.
+
+6. rest_api.py - demonstrates how to interact with external web services using Python's `requests` library. It implements a fully functional console client for a dummy REST API (`jsonplaceholder`), allowing users to perform standard CRUD (Create, Read, Update, Delete) operations.
